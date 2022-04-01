@@ -1,7 +1,9 @@
 package lab.demand;
 
+import java.util.List;
+
 public class Tax {
-    
+
     public double calculateTax(String country) {
 /*      if (country.equals("PE")) {
             return 0.18;
@@ -14,7 +16,9 @@ public class Tax {
         return (country.equals("PE"))? 0.18: (country.equals("BR"))? 0.12 : 0.0;
     }
 
-    public double calculateTaxByCountry()
+    public static double calculateTaxByCountry(Order order, double defaultAdditionalColombia, double defaultAdditionalPeru, double defaultAdditionalBrazil){
+        return (order.getCountry().equals("BR"))? defaultAdditionalBrazil: (order.getCountry().equals("PE"))? defaultAdditionalPeru : defaultAdditionalColombia;
+    }
 
 
 
